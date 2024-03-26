@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "article-summary",
+  "version": "1.0.0",
+  "description": "Summarize article content",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["scripting", "activeTab"]
+}
