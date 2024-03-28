@@ -36,8 +36,8 @@ function getPageData() {
 
 async function sendHtmlToServer(html, articleUrl) {
   try {
-    const { url, apiKey, model } = await restoreOptions();
-    const res = await fetch("http://localhost:3000/api/summarize-article", {
+    const { url, apiKey, model, serverApi } = await restoreOptions();
+    const res = await fetch(serverApi, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -73,6 +73,7 @@ function restoreOptions() {
         articleSummaryUrl: "", // default value
         articleSummaryApiKey: "",
         articleSummaryModel: "",
+        articleSummaryServerApi: "",
       },
       function (result) {
         if (chrome.runtime.lastError) {
@@ -82,6 +83,7 @@ function restoreOptions() {
             url: result.articleSummaryUrl,
             apiKey: result.articleSummaryApiKey,
             model: result.articleSummaryModel,
+            serverApi: result.articleSummaryServerApi,
           });
         }
       }
