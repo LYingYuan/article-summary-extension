@@ -2,6 +2,10 @@
   font-size: 17px;
 }
 
-.article-summary__loading {
+.article-summary__loading-hidden {
   display: none;
+}
+
+.article-summary__loading-visible {
+  display: block;
 }
